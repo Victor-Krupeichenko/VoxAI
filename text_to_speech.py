@@ -18,7 +18,7 @@ class SpeechConverter:
         self.volume = volume
         self.engine = pyttsx3.init()
         self.voices = self.engine.getProperty("voices")
-        self.engine.setProperty("voices", self.voices[self.voice_id].id)
+        self.engine.setProperty("voice", self.voices[self.voice_id].id)
         self.engine.setProperty("rate", self.voice_rate)
         self.engine.setProperty("volume", self.volume)
 
