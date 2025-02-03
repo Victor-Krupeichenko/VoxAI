@@ -1,0 +1,7 @@
+api_key=Your API Key
+model=mistral-large-latest
+assistant_name=алена
+gender=female
+voice_id=1
+voice_rate=145
+volume=0.5
