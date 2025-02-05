@@ -1,7 +1,14 @@
-api_key=Your API Key
+api_key=Your mistral_api_key
 model=mistral-large-latest
 assistant_name=алена
 gender=female
 voice_id=1
 voice_rate=145
 volume=0.5
+language=ru
+timeout=5
+legend=Ты личный ассистент, тебя зовут {}, отвечай от лица {} пола, ответ всегда пиши только на {} языке.
+hello=привет
+exit=выход
+exit_message=до свидания,Прощай,До встречи,Всего доброго,Увидимся,Пока,До скорого
+start_message=начинаю поиск,Приступаю к поиску,Начинаю исследование,Берусь за поиск,Разберусь,Отправляюсь на поиски,Стартую поиск
