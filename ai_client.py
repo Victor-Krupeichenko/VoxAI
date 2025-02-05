@@ -16,7 +16,8 @@ class MistralClient:
         :param gender: пол ассистента
         :param language: язык ассистента(по умолчанию русский так как модель распознания речи только для русского языка)
         """
-        self.client = Mistral(api_key=api_key)
+        self.api_key = api_key
+        self.client = Mistral(api_key=self.api_key)
         self.model = model
         self.legend = legend
         self.assistant_name = assistant_name
