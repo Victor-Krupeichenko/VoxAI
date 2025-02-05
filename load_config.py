@@ -1,5 +1,12 @@
 class SettingsLoader:
+    """
+    Класс для работы с файлом настроек
+    """
     def __init__(self, path):
+        """
+        Конструктор
+        :param path: путь к файлу настроек
+        """
         self.path = path
 
     @staticmethod
@@ -25,6 +32,19 @@ class SettingsLoader:
         except ValueError:
             return False
 
+    @staticmethod
+    def list_messages(key, value):
+        """
+        Преобразует значение в список сообщений
+        :param key: ключ в словаре
+        :param value: значение которые необходимо преобразовать в список
+        :return: list[value] or value
+        """
+        keys = ["start_message", "exit_message"]
+        if key in keys:
+            return value.split(",")
+        return value
+
     def open_file(self):
         """
         Открывает файл и построчно читает содержимое.
@@ -40,6 +60,7 @@ class SettingsLoader:
                         value = int(value)
                     elif self.is_float(value):
                         value = float(value)
+                    value = self.list_messages(key, value)
                     conf_dict.setdefault(key, value)
         except FileNotFoundError:
             print("Файл не найден")
